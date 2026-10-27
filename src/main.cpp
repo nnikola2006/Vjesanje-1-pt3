@@ -25,6 +25,29 @@ void printArray(const Array& array)
 
 int main()
 {
+    /*  ASISTENTOVI TESTOVI NA LABU:
+        const int N = 1'000'000;
+        PJ1::Array a(N);
+        for(int i = 0; i < N; i++)
+        {
+            a.append(2*i);
+        }
+    
+        if(a.size() == N)
+        {
+            printf("Nije dobijena ocekivana velicina niza");
+            return -1;
+        }
+        for(int i = 0; i < a.size(); i++)
+        {
+            if(a.at(i) != i*2)
+            {
+                printf("Nije dobijena ocekivani element na indeksu %d", i);
+                return -1;
+            }
+        }
+    */
+
     cout << "\n";
     // Da li se inicijalizacija i oslobađanje memorije neispravno vrše?
     // Ko sto "BIĆE KEC KO KUCA U NEDJELJU" HOCE KURACCCC
@@ -35,6 +58,15 @@ int main()
     Array niz2(10);
     cout << "Niz2: \n";
     cout << "Kapacitet: " << niz2.getCapacity() << ", velicina: " << niz2.size() << "\n";
+
+    // Test za destruktor (debuggerom) (ja kuco ne asistent)
+    {
+        cout << "\nTest za destruktor:\n";
+        Array test;
+        test.append(1);
+        test.append(2);
+        printArray(test);
+    }
 
     // Testiranje funckije append
     niz1.append(10);    // capacity == 1
