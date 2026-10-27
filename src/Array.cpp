@@ -4,7 +4,7 @@ using namespace PJ1; // da ne kucam svaki put PJ1::Array
 
 Array::Array()
 {
-    this->m_array = new int[1](); // kada se stave ove () onda automatski popuni niz sa 0
+    this->m_array = new int[1](); // kada se stave ove () onda automatski popuni niz sa 0 (isto kao broj zena sto sam pipno u zivotu HAHAHHAHA, salim se)
     this->m_capacity = 1;
     this->m_size = 0;
 }
@@ -12,25 +12,25 @@ Array::Array(int capacity)
 {
     if(capacity == 0)
     {
-        this->m_array = new int[1](); // kada se stave ove () onda automatski popuni niz sa 0
+        this->m_array = new int[1](); // ne moram opet objasnjavati polupani/na...
         this->m_capacity = 1;
         this->m_size = 0;
     }
     else
     {
-        this->m_array = new int[capacity](); // ne moram opet objasnjavati...
+        this->m_array = new int[capacity](); // sta os ti aj bolan dalje ne prav se glup
         this->m_capacity = capacity;
         this->m_size = 0;
     }
 }
 Array::~Array()
 {
-    delete[] this->m_array;
+    delete[] this->m_array; // brise balije
 }
 
-bool Array::isFull() const
+bool Array::isFull() const 
 {
-    if(this->m_size == this->m_capacity)
+    if(this->m_size == this->m_capacity)    
         return true;
     return false;
 }
@@ -56,6 +56,7 @@ void Array::append(int value)
         int new_capacity = m_capacity * 2;
         int* new_array = new int[new_capacity]();
 
+        // kopira/prebacuje stare clanove
         for(int i = 0; i < m_size; i++)
         {
             new_array[i] = m_array[i];

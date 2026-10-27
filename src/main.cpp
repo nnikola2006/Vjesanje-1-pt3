@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Array.h"
 
-// Ne volim stavljat "using namespace std" jer zna biti nekad slucaja sa name overlaping
+// Ne stavljam "using namespace std" jer zna biti nekad slucaja sa name overlaping
 // pa samo stavim std:: kog trebam koristit
 using std::cout, std::cin, std::endl;
 using namespace PJ1;
@@ -12,7 +12,7 @@ void printArray(const Array& array)
 {
     if(array.size() == 0)
     {
-        cout << "Niz nema elemenata\n";
+        cout << "Niz nema elemenata\n"; // ko sto vucko nema vise koga da dziha dziha
         return;
     }
 
@@ -26,7 +26,8 @@ void printArray(const Array& array)
 int main()
 {
     cout << "\n";
-    // Da li se inicijalizacija i oslobađanje memorije ispravno vrše?
+    // Da li se inicijalizacija i oslobađanje memorije neispravno vrše?
+    // Ko sto "BIĆE KEC KO KUCA U NEDJELJU" HOCE KURACCCC
     Array niz1;
     cout << "Niz1: \n";
     cout << "Kapacitet: " << niz1.getCapacity() << ", velicina: " << niz1.size() << "\n";
@@ -38,7 +39,7 @@ int main()
     // Testiranje funckije append
     niz1.append(10);    // capacity == 1
     niz1.append(3);     // capacity == 2
-    niz1.append(51);    // capacity == 4;
+    niz1.append(51);    // capacity == 4
     cout << "\nNiz1 nakon dodavanja elementata:\n";
     cout << "Kapactitet: " << niz1.getCapacity() << ", velicina: " << niz1.size() << "\n";
     
@@ -51,13 +52,12 @@ int main()
     printArray(niz1);
     printArray(niz2);
 
-    // Popunim i niz2
+    // Punimo niz2 ko sto Milance puni ćaciste u saftu
     cout << "\nPopunjavanje niz2:\n";
     for(int i = 0; i < 8; ++i) // stavio ++i jer u formuli ce onda se zeznut zbog 0
     {
         niz2.append(i*37 + 17); // bio sam lijen kucat rand() pa sam sibno random formulu iz glave
     }
-
     printArray(niz2);
     
     
@@ -71,7 +71,7 @@ int main()
     }
     std::cout << "Veliki niz uspjesno napunjen sa " << velikiNiz.size() << " elemenata\n";
     std::cout << "Element na poziciji 461: " << velikiNiz.at(461) << " (Ocekivano: " << (461 * 3 + 7) << ")\n";
-    
+
     return 0;
 }
 
